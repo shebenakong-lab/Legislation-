@@ -1,36 +1,285 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Legislation Phones SA</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: Arial, sans-serif;
+      background: #0b1220;
+      color: white;
+    }
+    .topbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+      position: sticky;
+      top: 0;
+      background: rgba(11,18,32,0.95);
+      backdrop-filter: blur(8px);
+      z-index: 10;
+    }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .brand img {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+    .brand h1 {
+      font-size: 18px;
+      line-height: 1.1;
+    }
+    .top-btn {
+      text-decoration: none;
+      background: #25d366;
+      color: white;
+      padding: 11px 16px;
+      border-radius: 10px;
+      font-weight: bold;
+      font-size: 14px;
+    }
+    .hero {
+      padding: 26px 18px 10px;
+    }
+    .hero-box {
+      background: linear-gradient(135deg, #1a2436, #0f172a);
+      border-radius: 22px;
+      padding: 22px;
+      overflow: hidden;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.35);
+    }
+    .hero-img {
+      width: 100%;
+      border-radius: 18px;
+      object-fit: cover;
+      max-height: 420px;
+      margin-bottom: 18px;
+    }
+    .eyebrow {
+      color: #93c5fd;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 10px;
+    }
+    .hero h2 {
+      font-size: 38px;
+      line-height: 0.95;
+      margin-bottom: 14px;
+    }
+    .hero p {
+      color: #cbd5e1;
+      font-size: 15px;
+      margin-bottom: 18px;
+    }
+    .hero-price {
+      font-size: 28px;
+      font-weight: bold;
+      color: #facc15;
+      margin-bottom: 8px;
+    }
+    .hero-note {
+      font-size: 13px;
+      color: #94a3b8;
+      margin-bottom: 18px;
+    }
+    .hero-actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-main, .btn-secondary {
+      text-decoration: none;
+      padding: 14px 18px;
+      border-radius: 12px;
+      font-weight: bold;
+      display: inline-block;
+    }
+    .btn-main {
+      background: #25d366;
+      color: white;
+    }
+    .btn-secondary {
+      border: 1px solid rgba(255,255,255,0.15);
+      color: white;
+      background: rgba(255,255,255,0.04);
+    }
+    .section {
+      padding: 24px 18px;
+    }
+    .section-title {
+      font-size: 34px;
+      line-height: 0.95;
+      margin-bottom: 14px;
+    }
+    .section-sub {
+      color: #94a3b8;
+      margin-bottom: 18px;
+      font-size: 14px;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 18px;
+    }
+    .card {
+      background: #162033;
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 10px 24px rgba(0,0,0,0.28);
+    }
+    .card img {
+      width: 100%;
+      height: 270px;
+      object-fit: cover;
+      display: block;
+    }
+    .card-body {
+      padding: 16px;
+    }
+    .tag {
+      display: inline-block;
+      font-size: 11px;
+      color: #93c5fd;
+      letter-spacing: 1.5px;
+      margin-bottom: 10px;
+    }
+    .card h3 {
+      font-size: 22px;
+      margin-bottom: 8px;
+    }
+    .spec {
+      color: #cbd5e1;
+      font-size: 14px;
+      margin-bottom: 6px;
+    }
+    .price {
+      color: #facc15;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 10px 0 12px;
+    }
+    .small {
+      color: #94a3b8;
+      font-size: 13px;
+      line-height: 1.4;
+    }
+    .footer-box {
+      margin: 8px 18px 28px;
+      background: #111827;
+      border-radius: 20px;
+      padding: 22px;
+      text-align: center;
+    }
+    .footer-box h3 {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .footer-box p {
+      color: #cbd5e1;
+      margin-bottom: 16px;
+      font-size: 14px;
+    }
+    @media (min-width: 768px) {
+      .hero h2 { font-size: 56px; }
+      .grid { grid-template-columns: repeat(2, 1fr); }
+    }
+  </style>
 </head>
+<body>
 
-<body style="font-family: Arial; margin:0; background:#0f172a; color:white; text-align:center;">
-
-  <div style="padding:40px;">
-    <h1 style="font-size:32px;">📱 Legislation Phones SA 🇿🇦</h1>
-    <p style="color:#cbd5f5;">Trusted iPhone Supplier | Nationwide Delivery</p>
-
-    <h2 style="margin-top:30px;">🔥 Hot Deals</h2>
-
-    <div style="background:#1e293b; padding:20px; border-radius:12px; margin:20px;">
-      <p>📱 iPhone 13 – R3000</p>
-      <p>📱 iPhone 14 – R7000</p>
-      <p>📱 iPhone 15 – R10000</p>
+  <div class="topbar">
+    <div class="brand">
+      <img src="logo.png" alt="Legislation Logo">
+      <h1>Legislation Phones SA</h1>
     </div>
+    <a class="top-btn" href="https://wa.me/27720811582">WhatsApp</a>
+  </div>
 
-    <p style="font-size:14px; color:#94a3b8;">
-      ✔ Tested Devices  
-      ✔ Same Day Delivery Available  
-      ✔ Order Confirmation Required Before Delivery
-    </p>
+  <section class="hero">
+    <div class="hero-box">
+      <img class="hero-img" src="iphone17-orange.jpg" alt="iPhone 17 Pro Max">
+      <div class="eyebrow">PREMIUM CONTRACT DEAL</div>
+      <h2>IPHONE 17<br>PRO MAX</h2>
+      <p>Luxury contract deal with a clean premium layout, fast support, and nationwide delivery.</p>
+      <div class="hero-price">R2000 deposit</div>
+      <div class="hero-note">Then R500 per month while the phone is with you.</div>
+      <div class="hero-actions">
+        <a class="btn-main" href="https://wa.me/27720811582">Secure on WhatsApp</a>
+        <a class="btn-secondary" href="#catalog">View Collection</a>
+      </div>
+    </div>
+  </section>
 
-    <br>
+  <section class="section" id="catalog">
+    <h2 class="section-title">NEW<br>COLLECTION</h2>
+    <p class="section-sub">Premium iPhones, contract deals, and ready stock.</p>
 
-    <a href="https://wa.me/27720811582"
-       style="background:#25D366; color:white; padding:15px 25px; text-decoration:none; border-radius:10px; font-size:18px;">
-       💬 Order Now on WhatsApp
-    </a>
+    <div class="grid">
+
+      <div class="card">
+        <img src="iphone15-white.jpg" alt="iPhone 15 Pro Max">
+        <div class="card-body">
+          <div class="tag">CONTRACT DEAL</div>
+          <h3>iPhone 15 Pro Max</h3>
+          <p class="spec">Deposit: R2000</p>
+          <p class="spec">Then: R500 per month</p>
+          <div class="price">Flexible Plan</div>
+          <p class="small">Client continues monthly payment while owning the phone.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="iphone14-blue.jpg" alt="iPhone 14 Pro Max">
+        <div class="card-body">
+          <div class="tag">READY STOCK</div>
+          <h3>iPhone 14 Pro Max</h3>
+          <p class="spec">Storage: 256GB</p>
+          <p class="spec">Battery Health: 89%</p>
+          <div class="price">R9000</div>
+          <p class="small">Premium condition with strong battery health and luxury finish.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="iphone14-darkblue.jpg" alt="iPhone 13 Pro Max">
+        <div class="card-body">
+          <div class="tag">READY STOCK</div>
+          <h3>iPhone 13 Pro Max</h3>
+          <p class="spec">Storage: 128GB</p>
+          <p class="spec">Battery Health: 83%</p>
+          <div class="price">R6000</div>
+          <p class="small">Affordable premium model with solid performance and clean design.</p>
+        </div>
+      </div>
+
+      <div class="card">
+        <img src="iphone13-combo.jpg" alt="2 iPhone 13 combo">
+        <div class="card-body">
+          <div class="tag">COMBO DEAL</div>
+          <h3>2 iPhone 13s</h3>
+          <p class="spec">Special combo offer</p>
+          <p class="spec">Limited availability</p>
+          <div class="price">R4000</div>
+          <p class="small">Perfect duo deal for resale, gifting, or family purchase.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="footer-box">
+    <h3>Order Confirmation Required Before Delivery</h3>
+    <p>Professional support, nationwide delivery, and direct WhatsApp assistance.</p>
+    <a class="btn-main" href="https://wa.me/27720811582">Place Order on WhatsApp</a>
   </div>
 
 </body>
